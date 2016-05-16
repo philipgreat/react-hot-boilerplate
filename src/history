@@ -1,0 +1,38 @@
+import React, { Component } from 'react';
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {count: 100};
+    this.tick = this.tick.bind(this);
+  }
+  
+  render() {
+    
+    //this.x=10;
+    
+    if(1>1){
+      console.log("this called");
+      
+      return (<div onClick={this.tick}>good: {this.state.count}</div>);
+    }else{
+      return (<h1 onClick={this.tick}>Hello {this.state.count} and from the bad part, world. From the good part-aa!</h1>);
+    }
+    
+    
+  }
+  
+  tick(){
+    console.log("tick called" + this.state.count);
+    //this.state.counter +=1;
+    this.setState({count: this.state.count + 1});
+    //this.render();
+  }
+  version(){
+    console.log("this version called");
+    return (<div>good111</div>);
+    
+  }
+
+  
+}
