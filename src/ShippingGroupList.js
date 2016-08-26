@@ -22,7 +22,7 @@ export default class ShippingGroupList extends Component
   }
     
     render() {
-        console.log("render called")
+        console.log("render called shippingGroup")
        
         return (
           <div> { this.renderShippingGroupList(this.state.shippingGroupList)} </div>)

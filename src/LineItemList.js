@@ -11,6 +11,12 @@ export default class LineItemList extends Component
         //this.refresh = this.refresh.bind(this)
 	}
 
+    componentWillReceiveProps( nextProps){
+
+        console.log("will change to "+nextProps)
+        this.state = nextProps
+    }
+
     renderLineItemList(lineItemList){
     
      var list =  lineItemList.map(function(lineItem) {
@@ -23,10 +29,11 @@ export default class LineItemList extends Component
   }
     
     render() {
-        console.log("render called")
+        console.log("render called from line item list")
        
         return (
-          <div> { this.renderLineItemList(this.state.lineItemList)} </div>)
+          <div> { this.renderLineItemList(this.state.lineItemList)} </div>
+        )
 
     }
 

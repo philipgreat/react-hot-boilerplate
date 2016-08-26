@@ -22,7 +22,7 @@ export default class PaymentGroupList extends Component
   }
     
     render() {
-        console.log("render called")
+        console.log("render called from paymentGroup")
        
         return (
           <div> { this.renderPaymentGroupList(this.state.paymentGroupList)} </div>)

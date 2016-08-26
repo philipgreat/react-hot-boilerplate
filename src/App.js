@@ -33,6 +33,18 @@ export default class App extends Component {
 
   }
 
+  
+    renderLineItemList(lineItemList){
+    
+     var list =  lineItemList.map(function(lineItem) {
+        return (
+          <div key={lineItem.id}> {lineItem.id} - {lineItem.skuId} {lineItem.skuName} AMT: {lineItem.amount}</div>
+        );
+    });
+    return  list
+    
+  }
+
   componentDidMount(){
      console.log("componentDidMount")
      this.refresh()
@@ -53,7 +65,7 @@ export default class App extends Component {
       <LineItemList lineItemList={this.state.lineItemList}/>
       <ShippingGroupList shippingGroupList={this.state.shippingGroupList}/>
       <PaymentGroupList paymentGroupList={this.state.paymentGroupList}/>
-            
+      {this.renderLineItemList(this.state.lineItemList)}
       </div>
       
     );
